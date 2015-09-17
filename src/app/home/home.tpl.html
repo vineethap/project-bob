@@ -1,0 +1,48 @@
+<div layout="row" layout-sm="column" class="content-wrap">
+  <div flex>
+    <h2>List View Left</h2>
+    <md-content>
+        <md-list>
+          <md-item ng-repeat="item in todos">
+            <md-item-content class="list-content">
+              <div class="md-tile-left">
+                  <i class="fa fa-user"></i>
+                  <!-- <img ng-src="{{item.face}}" class="face" alt="{{item.who}}"> -->
+              </div>
+              <div class="md-tile-content">
+                <h3>{{item.what}}</h3>
+                <h4>{{item.who}}</h4>
+                <p>
+                  {{item.notes}}
+                </p>
+              </div>
+              <md-button class="md-raised" ng-click="showGridBottomSheet($event)">Button</md-button>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-content>
+  </div>
+  <div flex>
+    <h2>List View Right</h2>
+    <md-content class="list-content">
+        <md-list>
+          <md-item ng-repeat="item in todos">
+            <md-item-content>
+              <div class="md-tile-left">
+                  <i class="fa fa-user"></i>
+                  <!-- <img ng-src="{{item.face}}" class="face" alt="{{item.who}}"> -->
+              </div>
+              <div class="md-tile-content">
+                <h3>{{item.what}}</h3>
+                <h4>{{item.who}}</h4>
+                <p>
+                  {{item.notes}}
+                </p>
+              </div>
+              <md-button class="md-raised md-primary" ng-click="showGridBottomSheet($event)">Button</md-button>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-content>
+  </div>
+</div>
