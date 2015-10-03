@@ -3,6 +3,8 @@ angular.module( 'ngBoilerplate', [
   'templates-common',
   'ngBoilerplate.home',
   'ngBoilerplate.about',
+  'ngBoilerplate.forms',
+  'ngBoilerplate.forms.single',
   'ui.router'
 ])
 
@@ -27,6 +29,10 @@ angular.module( 'ngBoilerplate', [
     {
       name : "About",
       url : "about"
+    },
+    {
+      name : "Forms",
+      url : "forms"
     }
   ];
 

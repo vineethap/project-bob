@@ -1,0 +1,53 @@
+<div id="table-div">
+	<table class="table table-hover tbl-fitting" id="table">
+		<thead>
+			<th>Fitting #</th>
+			<th>Exit/Emergency</th>
+			<th>Pass/Fail</th>
+			<th>Where Fitting is Located</th>
+			<th colspan="2">Works Required</th>	
+		</thead>
+		<tbody id="tbody" >
+			<tr ng-repeat="row in rows">
+				<td>
+					<md-button class="md-icon-button button-icons" type="button">
+						<i>{{row.number}}</i>
+					</md-button>
+				</td>
+				<td>
+			        <md-select ng-model="row.exit_status" aria-label="">
+			          	<md-option value="Exit">Exit</md-option>
+			          	<md-option value="Emergency">Emergency</md-option>
+			        </md-select>
+				</td>
+				<td>
+			        <md-select ng-model="row.pass_status" aria-label="">
+			          	<md-option value="Pass">Pass</md-option>
+			          	<md-option value="Fail">Fail</md-option>
+			        </md-select>
+				</td>
+				<td>
+					<md-input-container>
+						<input ng-model="row.fitting_location" type="text" aria-label="">
+					</md-input-container>
+				</td>
+				<td>
+					<md-select ng-model="row.works_required" aria-label="">
+			          	<md-option value="Control Board Replaced">Control Board Replaced</md-option>
+			          	<md-option value="Battery Replaced">Battery Replaced</md-option>
+			          	<md-option value="Repaired">Repaired</md-option>
+			          	<md-option value="Started">Started Replaced</md-option>
+			          	<md-option value="On general lighting circuit">On general lighting circuit</md-option>
+			          	<md-option value="Tube Replaced">Tube Replaced</md-option>
+			          	<md-option value="No power to fitting">No power to fitting</md-option>
+			        </md-select>
+				</td>
+				<td>
+					<md-input-container flex>
+					    <md-button class="md-icon-button button-icons" aria-label="Add" type="button" ng-if="row.button" ng-click="addrow(row)"><i class="fa fa-plus-square"></i></md-button>
+					</md-input-container>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

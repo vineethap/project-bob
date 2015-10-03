@@ -1,0 +1,152 @@
+<form flex>
+	<div class="colorNested layout-wrap ng-scope" layout="row">
+      <div flex="33">
+        <label>Customer Name: <span>{{customer_name}}</span></label>
+      </div>
+      <div style="color:white" class="flex-33">
+        <label>Site Name: <span ng-bind="site_name"></span></label>
+      </div>
+      <div class="flex">
+        <label>Site Address: <span>{{site_address}}</span></label>
+      </div>
+      <div class="flex-50">
+        <label>Suburb: <span>{{suburb}}</span></label>
+      </div>
+      <div class="flex">
+        <label>Site No: <span>{{site_no}}</span></label>
+      </div>
+    </div>
+	<div class="md-padding">
+			<div layout layout-sm="column">
+				<md-input-container flex>
+		          	<label>Contact Person</label>
+		          	<input ng-model="form.contact_person">
+		        </md-input-container>
+		        <md-input-container flex>
+		          	<label>Contact Phone</label>
+		          	<input ng-model="form.contact_phone">
+		        </md-input-container>
+		        <md-input-container flex>
+		          	<label>Email</label>
+		          	<input ng-model="form.email">
+		        </md-input-container>
+			</div>
+			<div layout layout-sm="column">
+				<md-input-container flex>
+		          	<label>Arrival Time</label>
+		          	<input ng-model="form.arrival_time">
+		        </md-input-container>
+		        <md-input-container flex>
+		          	<label>Technician</label>
+		          	<input ng-model="form.technician">
+		        </md-input-container>
+		        <md-input-container flex>
+		          	<label>Account #</label>
+		          	<input ng-model="form.account_no" type="text">
+		        </md-input-container>
+			</div>
+			<div layout layout-sm="column">
+				<div flex="50" layout="row" layout-align="start center">
+					<label>Level of Test</label>
+					<md-radio-group ng-model="form.level_test">
+					    <md-radio-button value="L1 - 6 Monthly" class="md-primary" ng-style="{'display':'inline'}">L1 - 6 Monthly</md-radio-button>
+					    <md-radio-button value="L2 - Annual" class="md-primary" ng-style="{'display':'inline'}">L2 - Annual</md-radio-button>
+					</md-radio-group>
+				</div>
+				<div flex>
+					<label>Service Date</label>
+					<md-datepicker ng-model="form.service_date" md-placeholder="Enter date"></md-datepicker>		
+				</div>
+			</div>
+			<h5 class="md-subhead">FITTING NUMBERS AND RESULTS</h5>
+			<div layout="row" layout-sm="column" layout-align="center start">
+				<fitting-numbers-results rows="form.rows" flex="70"></fitting-numbers-results>
+				<div flex="30" layout="row" layout-align="center end">
+					<md-input-container flex>
+					    <label>Actions Taken</label>
+						<textarea ng-model="form.actions_taken" columns="1" rows="3"></textarea>
+					</md-input-container>
+				</div>
+			</div>
+			<h5 class="md-subhead">TEST CHECKLIST</h5>
+			<div layout layout-sm="column">
+				<div flex>
+					<div layout="row" layout-align="start start">
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.replaced_faulty_tubes" aria-label="">
+							    Replaced Faulty tubes
+							</md-checkbox>
+						</div>
+						<div flex="33" layout-align="start start">
+							<md-checkbox ng-model="form.cb.performed_discharge_test" aria-label="">
+							    Performed Discharge test
+							</md-checkbox>
+						</div>
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.completed_documentation" aria-label="">
+							    Completed all documentation
+							</md-checkbox>
+						</div>
+					</div>
+					<div layout="row" layout-align="start start">
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.clean_diffuser" aria-label="">
+							    Clean diffuser
+							</md-checkbox>
+						</div>
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.inspect_battery_backup" aria-label="">
+							    Inspect fitting on battery backup
+							</md-checkbox>
+						</div>
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.check_charge_indicators" aria-label="">
+							    Check all charge indicators
+							</md-checkbox>
+						</div>
+					</div>
+					<div layout="row" layout-align="start start">	
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.repair_quote_requested" aria-label="">
+							    Repair quote requested
+							</md-checkbox>
+						</div>				
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.restore_mains_power" aria-label="">
+							    Restore mains power to fittings
+							</md-checkbox>
+						</div>
+						<div flex="33">
+							<md-checkbox ng-model="form.cb.performed_90min_test" aria-label="">
+							    Performed 90 min discharge test
+							</md-checkbox>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div layout layout-sm="column">
+				<div flex="50">
+					<md-input-container flex>
+					    <label>Total no:of fittings failed</label>
+					    <input ng-model="form.failed" type="number">
+					</md-input-container>
+					<md-input-container flex>
+					    <label>Comments</label>
+					    <textarea ng-model="form.comments" columns="1" ></textarea>
+					</md-input-container>
+				</div>
+				<div flex="45">
+					<md-input-container flex>
+			          	<label>Contrator Name</label>
+			          	<input ng-model="form.contrator_name" type="text">
+			        </md-input-container>
+			        <md-input-container flex>
+			          	<label>Contrator Code</label>
+			          	<input ng-model="form.contrator_code" type="text">
+			        </md-input-container>
+				</div>
+			</div>
+			<md-button class="md-raised md-primary" ng-click="save(form)">Save</md-button>
+			<md-button class="md-raised md-warn">Cancel</md-button>	
+	</div>
+</form>
