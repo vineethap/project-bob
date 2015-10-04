@@ -10,7 +10,9 @@
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
-
+    <link rel="stylesheet" href="assets/style.css">
+  
+    <script src="//www.parsecdn.com/js/parse-1.2.16.min.js"></script>
     <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
 
@@ -18,7 +20,7 @@
   <body layout="column">
     <md-toolbar layout="row">
       <md-button ng-click="toggleSidenav('left')" class="menuBtn" aria-label="menus"><i class="fa fa-bars"></i></md-button>
-      <h1>AngularJS Material default App</h1>
+      <!-- <h1>AngularJS Material default App</h1> -->
     </md-toolbar>
     <div layout="row" flex>
       <md-sidenav md-component-id="left" class="md-sidenav-left" md-whiteframe-z2 ng-isolate-scope>
@@ -32,7 +34,11 @@
           </md-item>
         </md-list>
       </md-sidenav>
-      <md-content layout="row" class="container md-padding" ui-view="main"></md-content>
-    </div>
+
+      <md-content layout flex  ui-view="main"></md-content>
   </body>
+  <script>
+    Parse.initialize("yhZOPXAsxwh4gzS1wlM7LLcQ35313yx47U6ml4P2", "9gI24D6bOsf954kD0JXaqdAum9CmTnWcw0knVHE5");
+  </script>
+  <script src="//localhost:35729/livereload.js"></script>
 </html>

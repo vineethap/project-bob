@@ -1,0 +1,8 @@
+<div class="forms-list">
+	<md-list-item ng-repeat="form in forms track by $index" ng-click="gotoForm(form.id)" flex>
+    <span class="md-avatar" >{{$index+1}}</span>
+    <p>{{ form.get('customer_name') }}</p>
+    <md-icon md-svg-icon="communication:messenger" aria-label="Open Chat" class="md-secondary md-hue-3" ></md-icon>
+	<md-divider></md-divider>
+  </md-list-item>
+</div>
