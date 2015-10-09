@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Bob": {
+      "applicationId": "HtFFbBky4d9Kz3dhqC9cmf0HOo3vy29GXDppBjUK"
+    },
+    "_default": {
+      "link": "Bob"
+    }
+  }
+}

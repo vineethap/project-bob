@@ -1,0 +1,36 @@
+
+   <md-dialog aria-label="Mango (Fruit)">
+    <md-content class="md-padding">
+       <form name="userForm">
+       <h3>Adduser</h3>
+          <div layout layout-sm="column">
+            <md-input-container class="flex md-default-theme md-input-has-value">
+                <label>Username</label>
+                <input ng-model="user.username" required>
+            </md-input-container>
+            <md-input-container class="flex md-default-theme md-input-has-value">
+                <label>Email</label>
+                <input type="email" ng-model="user.email" required>
+            </md-input-container>
+             <md-input-container flex>
+                <label >Password</label>
+                <input type="password" ng-model="user.password" required>
+            </md-input-container>
+            
+            <md-select ng-model="user.role" class="md-select-value" id="dropdown">
+                <md-option  data-ng-repeat="user in roles" ng-selected="{{$first}}">{{ user }}</md-option>
+            </md-select>
+            </div>
+             </form>
+             </md-content>
+            <div class="md-actions" layout="row"> <span flex></span>
+            <md-button ng-click="save(user)" class="md-raised md-primary">
+                Save
+            </md-button>
+            <md-button ng-click="cancel()" class="md-raised md-warn" style="margin-right:20px;">
+                Cancel
+            </md-button>
+       </div>
+   
+</md-dialog>
+

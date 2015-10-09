@@ -52,9 +52,10 @@ angular.module( 'ngBoilerplate.forms.single', [
 		}
 
 	});
-
-
+	$scope.currentUser = Parse.User.current();
+	$scope.roles=$scope.currentUser.get('role');
 	$scope.save = function (form) {
+
 		formService.update(id, form, function(client_Building, error) {
 			if(error){
 				showAlert("Error occured while updating");

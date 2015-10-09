@@ -1,0 +1,25 @@
+
+ <div flex layout="row" layout-align="center center">
+  <div flex="30" style="color:white">
+    <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+        <md-content class="md-padding">
+           <!--  <div flex-sm="100" flex-gt-sm="80" layout-sm="column"> -->
+                <form name="login" >
+                    <md-input-container >
+                        <label>Username</label>
+                        <input ng-model="form.username" required>
+                    </md-input-container>
+                    <md-input-container >
+                        <label>Password</label>
+                        <input type="password" ng-model="form.password" required>
+                    </md-input-container>
+ 
+                    <div flex layout="row" layout-align="center center" >
+                   <md-button class="md-raised md-primary" ng-click="userLogin(form)">Login</md-button>
+                   </div>
+                </form>
+            </div>
+        </md-content>
+    </div>
+    </div>
+</div>

@@ -294,6 +294,7 @@ module.exports = function ( grunt ) {
         'Gruntfile.js'
       ],
       options: {
+        '-W099':true,
         curly: true,
         immed: true,
         newcap: true,

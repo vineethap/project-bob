@@ -30,7 +30,13 @@ label span {
  opacity: 0.9;
  color: white;
 }
-
+#dropdown{
+  width:20px;
+}
+#btn{
+  margin-right: 30px;
+ position: absolute;
+}
 .colorNested-noPad> div  {
  box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.26);
  opacity: 0.9;

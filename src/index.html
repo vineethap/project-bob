@@ -17,19 +17,27 @@
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
 
   </head>
-  <body layout="column">
+  <body layout="column" >
     <md-toolbar layout="row">
-      <md-button ng-click="toggleSidenav('left')" class="menuBtn" aria-label="menus"><i class="fa fa-bars"></i></md-button>
+    <div  class="col-sm-11">
+      <md-button ng-if="c_user" ng-click="toggleSidenav('left')" class="menuBtn" aria-label="menus"><i class="fa fa-bars" logout></i></md-button></div>
+      <div class="col-sm-1">
+       <md-button ng-if="c_user" ng-click="Logout()" class="menuBtn" aria-label="menu" id="btn"><i class="fa fa-sign-out">
+     
+       </i></md-button>
+        
+      </div>
       <!-- <h1>AngularJS Material default App</h1> -->
     </md-toolbar>
     <div layout="row" flex>
       <md-sidenav md-component-id="left" class="md-sidenav-left" md-whiteframe-z2 ng-isolate-scope>
         <md-list class="side-menus">
-          <md-item ng-repeat="it in menus">
-            <md-item-content>
+          <md-item ng-repeat="it in menus" >
+            <md-item-content >
               <md-button  ui-sref={{it.url}} >
                 {{it.name}}
               </md-button>
+
             </md-item-content>
           </md-item>
         </md-list>
@@ -38,7 +46,7 @@
       <md-content layout flex  ui-view="main"></md-content>
   </body>
   <script>
-    Parse.initialize("yhZOPXAsxwh4gzS1wlM7LLcQ35313yx47U6ml4P2", "9gI24D6bOsf954kD0JXaqdAum9CmTnWcw0knVHE5");
+    Parse.initialize("HtFFbBky4d9Kz3dhqC9cmf0HOo3vy29GXDppBjUK", "HE2VMhnJlljeOcnYTOijkNFjurxlYYp8gdjXtnTU");
   </script>
   <script src="//localhost:35729/livereload.js"></script>
 </html>
