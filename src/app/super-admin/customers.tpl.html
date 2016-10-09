@@ -1,7 +1,8 @@
-<div flex >
-    <div class="md-padding">
+<div flex>
+ <div class="md-padding">
+     <h3>Siteadmins</h3>
         <md-content>
-            <md-button class="md-warn md-raised md-hue-2" ng-click="open()">AddUser</md-button>
+            <md-button class="md-warn md-raised md-hue-2" ng-click="gotoForm()">Add Customer</md-button>
           
         </md-content>
 
@@ -14,25 +15,16 @@
                     <th>Role</th>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="user in users track by $index">
+                    <tr ng-repeat="user in siteadmins track by $index">
                         <td>{{$index+1}}</td>
                         <td>{{user.get('username')}}</td>
                         <td>{{user.get('email')}}</td>
                         <td>{{user.get('role')}}</td>
+                        <td>  <button  ng-click="edit(user.id)" class="menuBtn" aria-label="menu" id="btn"><i class="fa fa-edit"> </i></td>
+                        <td><button  ng-click="destroy(user.id)" class="menuBtn" aria-label="menu" id="btn"><i class="fa fa-trash-o"> </i></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+         </div>
        </div>
-
-     
-     <div class="md-padding">
-     <md-list-item ng-click="gotoForm()" flex>
-    <span class="md-avatar" >{{$index+1}}</span>
-    <p> customer </p>
-    
-    <md-divider></md-divider>
-  </md-list-item>
-</div>
-</div>
-    
+    </div>

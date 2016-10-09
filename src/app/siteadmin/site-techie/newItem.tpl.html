@@ -1,0 +1,35 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <md-content class="md-padding">
+       <form name="itemForm">
+       <h3>Adduser</h3>
+       <div layout layout-md="row">
+            <md-input-container class="flex md-default-theme md-input-has-value">
+                <label>Item Code</label>
+                <input ng-model="item.Item_code" type="number" required>
+            </md-input-container>
+            <md-input-container >
+                <label>Long Description</label>
+                <input type="string" ng-model="item.long_description" required>
+            </md-input-container>
+             <md-input-container flex>
+                <label >Short Description</label>
+                <input  ng-model="item.short_description" type="string" required>
+            </md-input-container>
+             <md-input-container flex>
+                <label >Price</label>
+                <input  ng-model="item.Price" type="number" required>
+            </md-input-container>
+            </div>
+             </form>
+             </md-content>
+            <div class="md-actions" layout="row"> <span flex></span>
+            <md-button ng-click="save(item)" class="md-raised md-primary">
+                Save
+            </md-button>
+            <md-button ng-click="cancel()" class="md-raised md-warn" style="margin-right:20px;">
+                Cancel
+            </md-button>
+       </div>
+   
+</md-dialog>
+

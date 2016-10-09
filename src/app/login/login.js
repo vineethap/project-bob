@@ -5,7 +5,7 @@ angular.module('ngBoilerplate.login', [
 
 .config(function config($stateProvider) {
 })
-.controller('loginCtrl', function ($scope, $state, loginService, $mdDialog) {
+.controller('loginCtrl', function ($scope, $state, loginService, $mdDialog, $rootScope) {
 
   function showAlert(content) {
       $mdDialog.show(
@@ -18,22 +18,37 @@ angular.module('ngBoilerplate.login', [
     }
 
     $scope.userLogin = function(form) {
+        
         loginService.Login(form, function(res, error) {
+           
             if (error) {
                 showAlert("Invalid username or password");
-            }
+            }else{
             $state.go('home');
-            $scope.currentUser = res;
+            console.log(res);
+            $scope.currentUser = res._sessionToken;
+            console.log("sdf",$scope.currentUser)
+
+        }
         });
-    };
+}
+
+$rootScope.loggedIn = function() {
+    if ($rootScope.currentUser === null) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 })
 .factory('loginService', function() {
     return {
         Login: function(form, cb) {
-
+      
             Parse.User.logIn(form.username, form.password, {
                 success: function(results) {
                     return cb(results);
+                    
                 },
                 error: function(error) {
                     return cb(null, error);
@@ -42,3 +57,6 @@ angular.module('ngBoilerplate.login', [
         }
     };
 });
+
+
+  

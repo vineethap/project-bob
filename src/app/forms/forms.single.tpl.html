@@ -20,29 +20,29 @@
 			<div layout layout-sm="column">
 				<md-input-container flex>
 		          	<label>Contact Person</label>
-		          	<input ng-model="form.contact_person" ng-disabled="roles=='SiteAdmin'">
+		          	<input ng-model="form.contact_person" ng-disabled="roles=='Siteadmin'">
 		        </md-input-container>
 		        <md-input-container flex>
 		          	<label>Contact Phone</label>
-		          	<input ng-model="form.contact_phone" ng-disabled="roles=='SiteAdmin'">
+		          	<input ng-model="form.contact_phone" ng-disabled="roles=='Siteadmin'">
 		        </md-input-container>
 		        <md-input-container flex>
 		          	<label>Email</label>
-		          	<input ng-model="form.email" ng-disabled="roles=='SiteAdmin'" >
+		          	<input ng-model="form.email" ng-disabled="roles=='Siteadmin'" >
 		        </md-input-container>
 			</div>
 			<div layout layout-sm="column">
 				<md-input-container flex>
 		          	<label>Arrival Time</label>
-		          	<input ng-model="form.arrival_time" ng-disabled="roles=='SiteAdmin'">
+		          	<input ng-model="form.arrival_time" ng-disabled="roles=='Siteadmin'">
 		        </md-input-container>
 		        <md-input-container flex>
 		          	<label>Technician</label>
-		          	<input ng-model="form.technician" ng-disabled="roles=='SiteAdmin'" >
+		          	<input ng-model="form.technician" ng-disabled="roles=='Siteadmin'" >
 		        </md-input-container>
 		        <md-input-container flex>
 		          	<label>Account #</label>
-		          	<input ng-model="form.account_no" type="text" ng-disabled="roles=='SiteAdmin'">
+		          	<input ng-model="form.account_no" type="text" ng-disabled="roles=='Siteadmin'">
 
 		        </md-input-container>
 			</div>
@@ -50,22 +50,22 @@
 				<div flex="50" layout="row" layout-align="start center">
 					<label>Level of Test</label>
 					<md-radio-group ng-model="form.level_test" >
-					    <md-radio-button value="L1 - 6 Monthly" class="md-primary" ng-style="{'display':'inline'}" ng-disabled="roles=='SiteAdmin'" >L1 - 6 Monthly</md-radio-button>
-					    <md-radio-button value="L2 - Annual" class="md-primary" ng-style="{'display':'inline'}" ng-disabled="roles=='SiteAdmin'">L2 - Annual</md-radio-button>
+					    <md-radio-button value="L1 - 6 Monthly" class="md-primary" ng-style="{'display':'inline'}" ng-disabled="roles=='Siteadmin'" >L1 - 6 Monthly</md-radio-button>
+					    <md-radio-button value="L2 - Annual" class="md-primary" ng-style="{'display':'inline'}" ng-disabled="roles=='Siteadmin'">L2 - Annual</md-radio-button>
 					</md-radio-group>
 				</div>
 				<div flex>
 					<label>Service Date</label>
-					<md-datepicker ng-model="form.service_date" md-placeholder="Enter date" ng-disabled="roles=='SiteAdmin'"></md-datepicker>		
+					<md-datepicker ng-model="form.service_date" md-placeholder="Enter date" ng-disabled="roles=='Siteadmin'"></md-datepicker>		
 				</div>
 			</div>
 			<h5 class="md-subhead">FITTING NUMBERS AND RESULTS</h5>
-			<div layout="row" layout-sm="column" layout-align="center start" ng-disabled="roles=='SiteAdmin'">
+			<div layout="row" layout-sm="column" layout-align="center start" ng-disabled="roles=='Siteadmin'">
 				<fitting-numbers-results rows="form.rows" flex="70" ></fitting-numbers-results>
 				<div flex="30" layout="row" layout-align="center end">
 					<md-input-container flex>
 					    <label>Actions Taken</label>
-						<textarea ng-model="form.actions_taken" columns="1" rows="3"ng-disabled="roles=='SiteAdmin'" ></textarea>
+						<textarea ng-model="form.actions_taken" columns="1" rows="3" ></textarea>
 					</md-input-container>
 				</div>
 			</div>
@@ -74,51 +74,51 @@
 				<div flex>
 					<div layout="row" layout-align="start start">
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.replaced_faulty_tubes" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.replaced_faulty_tubes" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Replaced Faulty tubes
 							</md-checkbox>
 						</div>
 						<div flex="33" layout-align="start start">
-							<md-checkbox ng-model="form.cb.performed_discharge_test" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.performed_discharge_test" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Performed Discharge test
 							</md-checkbox>
 						</div>
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.completed_documentation" aria-label="" ng-disabled="roles=='SiteAdmin'" >
+							<md-checkbox ng-model="form.cb.completed_documentation" aria-label="" ng-disabled="roles=='Siteadmin'" >
 							    Completed all documentation
 							</md-checkbox>
 						</div>
 					</div>
 					<div layout="row" layout-align="start start">
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.clean_diffuser" aria-label="" ng-disabled="roles=='SiteAdmin'" >
+							<md-checkbox ng-model="form.cb.clean_diffuser" aria-label="" ng-disabled="roles=='Siteadmin'" >
 							    Clean diffuser
 							</md-checkbox>
 						</div>
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.inspect_battery_backup" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.inspect_battery_backup" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Inspect fitting on battery backup
 							</md-checkbox>
 						</div>
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.check_charge_indicators" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.check_charge_indicators" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Check all charge indicators
 							</md-checkbox>
 						</div>
 					</div>
 					<div layout="row" layout-align="start start">	
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.repair_quote_requested" aria-label=""ng-disabled="roles=='SiteAdmin'" >
+							<md-checkbox ng-model="form.cb.repair_quote_requested" aria-label=""ng-disabled="roles=='Siteadmin'" >
 							    Repair quote requested
 							</md-checkbox>
 						</div>				
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.restore_mains_power" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.restore_mains_power" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Restore mains power to fittings
 							</md-checkbox>
 						</div>
 						<div flex="33">
-							<md-checkbox ng-model="form.cb.performed_90min_test" aria-label="" ng-disabled="roles=='SiteAdmin'">
+							<md-checkbox ng-model="form.cb.performed_90min_test" aria-label="" ng-disabled="roles=='Siteadmin'">
 							    Performed 90 min discharge test
 							</md-checkbox>
 						</div>
@@ -129,26 +129,26 @@
 				<div flex="50">
 					<md-input-container flex>
 					    <label>Total no:of fittings failed</label>
-					    <input ng-model="form.failed" type="number" ng-disabled="roles=='SiteAdmin'">
+					    <input ng-model="form.failed" type="number" ng-disabled="roles=='Siteadmin'">
 					</md-input-container>
 					<md-input-container flex>
 					    <label>Comments</label>
-					    <textarea ng-model="form.comments" columns="1" ng-disabled="roles=='SiteAdmin'"></textarea>
+					    <textarea ng-model="form.comments" columns="1" ng-disabled="roles=='Siteadmin'"></textarea>
 					</md-input-container>
 				</div>
 				<div flex="45">
 					<md-input-container flex>
 			          	<label>Contrator Name</label>
-			          	<input ng-model="form.contrator_name" type="text" ng-disabled="roles=='SiteAdmin'">
+			          	<input ng-model="form.contrator_name" type="text" ng-disabled="roles=='Siteadmin'">
 			        </md-input-container>
 			        <md-input-container flex>
 			          	<label>Contrator Code</label>
-			          	<input ng-model="form.contrator_code" type="text" ng-disabled="roles=='SiteAdmin'">
+			          	<input ng-model="form.contrator_code" type="text" ng-disabled="roles=='Siteadmin'">
 			        </md-input-container>
 			      
 				</div>
 			</div>
-			<div ng-if="currentUser.get('role') =='Technician' || currentUser.get('role') =='SuperAdmin'">
+			<div ng-if="currentUser.get('role') =='Technician' || currentUser.get('role') =='Superadmin'">
 			<md-button class="md-raised md-primary" ng-click="save(form)"  >Save</md-button>
 			<md-button class="md-raised md-warn"  >Cancel</md-button>	
 			</div>

@@ -1,0 +1,140 @@
+<div flex>
+    <div class="md-padding">
+        <div class="col-sm-offset-3 col-sm-6" style="border: 1px solid #232730;" layout-align="center start">
+            <p class="md-title">Make a search for </p>
+            <md-button class="md-primary md-hue-1" ng-click="show_site=true;show_techie=false" >Site</md-button>
+            <md-button class="md-primary md-hue-1" ng-click="show_techie=true;show_site=false">Technician</md-button>
+            <div layout layout-sm="column" ng-show="show_site==true">
+                <md-input-container flex id="input">
+                    <label>Contractor Name</label>
+                    <input ng-model="site.techie_name">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Contractor Number</label>
+                    <input type="number" ng-model="site.techie_no">
+                </md-input-container>
+               
+            </div>
+
+            <div layout layout-sm="column" ng-show="show_techie==true">
+                <md-input-container flex id="input">
+                    <label>Site Name</label>
+                    <input ng-model="new.name">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Site Number</label>
+                    <input type="number" ng-model="new.Site_no">
+                </md-input-container>
+            </div>
+            <br/>
+            <div id="btn1">
+                <md-button class="md-accent md-raised md-hue-1" ng-show="show_site==true"ng-click="search(site)">Search</md-button>
+                <md-button class="md-accent md-raised md-hue-1" ng-show="show_techie==true"ng-click="search(new)">Search</md-button>
+                <md-button class="md-accent md-raised md-hue-1" ng-click="cancel()" ng-show="show_site==true||show_techie==true">cancel</md-button>
+            </div>
+        </div>
+        <div class="col-sm-offset-3 col-sm-6">
+       
+         <!-- <div layout layout-sm="column" ng-show="show_site==true">
+                <md-input-container flex id="input">
+                    <label >Site Name</label>
+                    <md-select ng-model="site.name">
+                        <md-option ng-repeat="site in allSites track by $index" value="{{site.get('name')}}">
+                            {{site.get('name')}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Site Number</label>
+                    <input type="number" ng-model="site.Site_no">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Service Address</label>
+                    <input type="text" ng-model="site.Service_address">
+                </md-input-container>
+
+                  <md-input-container flex id="input" >
+                    <label>id</label>
+                    <input type="text" ng-model="site.id">
+                </md-input-container>
+                
+
+            </div>
+
+            <md-button class="md-accent md-raised md-hue-1" ng-click="newsite(site)" ng-show="show_site==true">Add</md-button> -->
+             
+            <div layout layout-sm="column" ng-show="addnew">
+                <md-input-container flex id="input">
+                    <label >Contractor Number</label>
+                    <input type="text" ng-model="new.C_num">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Contractor Name</label>
+                    <input type="text" ng-model="new.username">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>contractor phone</label>
+                    <input type="number" ng-model="new.contact_no">
+                </md-input-container>
+
+                  <md-input-container flex id="input" >
+                    <label>id</label>
+                    <input type="text" ng-model="new.id">
+                </md-input-container>
+            </div>
+            <md-button class="md-accent md-raised md-hue-1" ng-click="newsite(new)" ng-show="data">AddTechie</md-button>
+        
+     </div>
+    </div>
+    <div class="col-sm-offset-3 col-sm-6">
+    <div class="md-padding">
+        <div id="table-div">
+            <table class="table table-hover tbl-fitting" id="table">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Service address</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="site in response track by $index">
+                        <td>{{$index+1}}</td>
+                        <td>{{site.get('name')}}</td>
+                        <td>{{site.get('Service_address')}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       </div>
+
+
+        <div layout layout-sm="column" >
+                <md-input-container flex id="input">
+                    <label >Site Name</label>
+                    <md-select ng-model="site.Site_no" ng-change="fetchSiteDetail(site.Site_no)">
+                        <md-option ng-repeat="site in allSites track by $index" ng-value="{{site.get('Site_no')}}">
+                            {{site.get('name')}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Site Number</label>
+                    <input type="number" ng-model="site.Site_no" readonly>
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Service Address</label>
+                    <input type="text" ng-model="site.Service_address" readonly>
+                </md-input-container>
+
+                  <!-- <md-input-container flex id="input" >
+                    <label>id</label>
+                    <input type="text" ng-model="site.id">
+                </md-input-container> -->
+                
+
+            </div>
+
+            <md-button class="md-accent md-raised md-hue-1" ng-click="newsite(site)" ng-show="show_site==true">Add</md-button>
+
+
+       </div>
+</div>

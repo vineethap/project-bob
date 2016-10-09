@@ -1,0 +1,66 @@
+
+<div class="col-sm-offset-2 col-sm-8">
+<form flex name="form1">
+
+    <div class="md-padding">
+    <h3>Create New Site</h3>
+        <md-content layout-padding>
+            <md-input-container flex >
+                <label>Name</label>
+                <input ng-model="site.name">
+            </md-input-container>
+           
+                <md-input-container flex>
+                    <label>Service Address</label>
+                    <input type="text" ng-model="site.Service_address">
+                </md-input-container>                                                     
+                    <div layout layout-sm="column">
+                <md-input-container flex >
+                    <label>Contact Person</label>
+                    <input ng-model="site.Contact_person" >
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Contact phone</label>
+                    <input type="number" ng-model="site.Contact_ph">
+                </md-input-container> 
+                <md-input-container flex >
+                    <label>Contact Email</label>
+                    <input ng-model="site.Contact_email" type="email" required>
+                    <div ng-messages="form.Contact_email.$error">
+                    <div ng-message="required">This is required.</div>
+
+                    </div>
+                </md-input-container>
+            </div>
+            
+                <md-input-container flex >
+                    <label>Site Number</label>
+                    <input ng-model="site.Site_no" type="number" required>
+                    <div ng-messages="form.Site_no.$error">
+                    <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                
+                <md-input-container flex >
+                    <label>Information</label>
+                    <input ng-model="site.Information" >
+                </md-input-container>
+            
+                <md-input-container flex >
+                   <md-datepicker ng-model="site.Invoice_date" md-placeholder="Invoice date"></md-datepicker>
+                </md-input-container>
+                <md-input-container flex >
+                    <label>GST Percentage</label>
+                    <input ng-model="site.GST" type="number">
+                </md-input-container>
+                <md-input-container flex >
+                    <label>PO Ref</label>
+                    <input ng-model="site.PO_ref">
+                </md-input-container>
+            </md-content>
+        <md-button class="md-raised md-primary" ng-click="save(site)" ng-disabled="form1.$invalid" ng-hide="title=='edit'">Save</md-button>
+        <md-button class="md-raised md-primary" ng-click="edit(site)" ng-show="title=='edit'" >edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
+    </div>
+</form>
+</div>

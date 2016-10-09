@@ -1,0 +1,81 @@
+<div class="col-sm-offset-2 col-sm-8">
+<form flex name="form2">
+
+    <div class="md-padding">
+    <h3 ng-hide="title=='edit'">Create New Technician</h3>
+    <h3 ng-show="title=='edit'">Edit Technician</h3>
+        <md-content layout-padding>
+         <md-input-container flex >
+                <label>Contractor Number </label>
+                <input ng-model="techie.C_num"type="number" >
+            </md-input-container>
+            <md-input-container flex >
+                <label>Name</label>
+                <input ng-model="techie.username" required>
+            </md-input-container>
+           
+                <md-input-container flex>
+                    <label>Surname</label>
+                    <input type="text" ng-model="techie.Surname" required>
+                </md-input-container>                                                     
+               <div layout layout-sm="column">
+                <md-input-container flex >
+                    <label>Mobile</label>
+                    <input ng-model="techie.Contact_no" type="number" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Home phone</label>
+                    <input type="number" ng-model="techie.home_ph">
+                </md-input-container>
+                 
+                <md-input-container flex >
+                    <label>Contact Email</label>
+                    <input ng-model="techie.email" type="email" required>
+                    <div ng-messages="form2.email.$error">
+                    <div ng-message="required">This is required.</div>
+
+                    </div>
+                </md-input-container>
+            </div>
+            <md-input-container flex>
+                    <label>Work</label>
+                    <input type="text" ng-model="techie.work">
+                </md-input-container>
+            
+                <md-input-container flex >
+                    <label>Company Owned name</label>
+                    <input ng-model="techie.company_name" type="text" required>
+                </md-input-container>
+               <div layout layout-sm="column">
+                <md-input-container flex id="input">
+                    <label>Address</label>
+                    <input ng-model="techie.address_detail">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>State</label>
+                    <md-select ng-model="techie.state">
+                        <md-option ng-repeat="dist in districts" value="{{dist}}">
+                            {{dist}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex id="input">
+                 <label >Postal code</label>
+                 <input ng-model="techie.postalcode"  type="number" required>
+                </md-input-container>
+                </div>
+                <md-input-container flex >
+                    <label>sites</label>
+                    <md-select ng-model="techie.site">
+                        <md-option ng-repeat="site in allSites track by $index" value="{{site.get('name')}}">
+                            {{site.get('name')}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-content>
+        <md-button class="md-raised md-primary" ng-click="save(techie)" ng-disabled="form2.$invalid" ng-hide="title=='edit'">Save</md-button>
+        <md-button class="md-raised md-primary" ng-click="edit(techie)" ng-show="title=='edit'" >edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
+    </div>
+</form>
+</div>

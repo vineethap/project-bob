@@ -14,15 +14,21 @@ angular.module( 'ngBoilerplate.users', [
      }
     },
     data:{ pageTitle: 'Users' }
-  }); 
+  })
+ 
 })
-.controller('userController', function ($scope, $mdDialog, userService){
+.controller('userController', function ($scope, $mdDialog, userService, $state){
 
     $scope.open = function() {
         var mdInstance = $mdDialog.show({
             controller: 'DialogController',
             templateUrl: 'users/adduser.tpl.html',
-            clickOutsideToClose: true
+            clickOutsideToClose: true,
+            reolve:{
+            	items: function() {
+                        return $scope.currentUser;
+                    }
+            }
         }).then(function(data) {
       		$scope.users.push(data);
 	    }, function() {
@@ -30,7 +36,8 @@ angular.module( 'ngBoilerplate.users', [
 	    });
 	};
     
-    $scope.currentUser = Parse.User.current();
+   $scope.currentUser = Parse.User.current();
+	console.log($scope.currentUser);
     userService.get(function (res,error){
 		if(error){
 			alert("Error: " + error.code + " " + error.message);
@@ -49,6 +56,7 @@ angular.module( 'ngBoilerplate.users', [
 			.ok('OK')
 		);
 	}
+	
 
 })
 .controller('DialogController', function ($scope, $mdDialog, userService) {
@@ -61,8 +69,8 @@ angular.module( 'ngBoilerplate.users', [
     };
    
     $scope.roles = [
-        "SuperAdmin",
-        "SiteAdmin",
+        "Superadmin",
+        "Siteadmin",
         "Technician"
     ];
 
@@ -78,12 +86,15 @@ angular.module( 'ngBoilerplate.users', [
 
  	$scope.save = function(user) {
 		userService.saveUser(user, function (res,error){
+			debugger
 		    if(error) {
 		    	showAlert("Unable to save:  " + error.code + " " + error.message);
 		    }
 			$mdDialog.hide(res);
 		});
 	};
+	// $scope.currentUser=items;
+
 })
 
 .factory('userService', function() {
@@ -102,6 +113,7 @@ angular.module( 'ngBoilerplate.users', [
 			});
 		},
 		saveUser:function(user,cb){
+			debugger
 			var newuser = new Parse.User();
 			newuser.set("email", user.email);
 			newuser.set("username", user.username);
@@ -111,11 +123,40 @@ angular.module( 'ngBoilerplate.users', [
 			    success: function(res) {
 			        return cb(res);
 			    },
-			    error: function(error) {
-			    	console.log(error);
+			    error: function(user,error) {
+			    	console.log("error--->",error);
 			    	return cb(null, error);
 			    }
 			});
-		} 
+		} ,
+		
+		getSiteadmin:function(cb){
+			var user = Parse.Object.extend("User");
+		    var query = new Parse.Query(user);
+			query.equalTo("role", "Siteadmin");
+			query.find({
+				success: function(results) {
+					return cb(results);
+					
+				},
+				error: function (error) {
+					return cb(null, error);
+				}
+			});
+		},
+		getSingle: function (id,cb) {
+	    var user = Parse.Object.extend("User");
+		var query = new Parse.Query(user);
+			query.get(id,{
+				success: function(results) {
+					return cb(results);
+					
+				},
+				error: function (result,error) {
+					return cb(null, error);
+				}
+			});
+		}
+
 	};
 });

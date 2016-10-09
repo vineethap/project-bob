@@ -6,7 +6,7 @@
 			<th>Pass/Fail</th>
 			<th>Where Fitting is Located</th>
 			<th>Works Required</th>	
-			<th ng-if="roles=='SiteAdmin'"></th>
+			<th ng-if="roles=='Superadmin|| roles==Technician'"></th>
 		</thead>
 		<tbody id="tbody" >
 			<tr ng-repeat="row in rows">
@@ -43,9 +43,9 @@
 			          	<md-option value="No power to fitting">No power to fitting</md-option>
 			        </md-select>
 				</td>
-				<td ng-if="roles=='SiteAdmin'">
+				<td ng-if="roles=='Superadmin|| roles==Technician'">
 					<md-input-container flex>
-					    <md-button class="md-icon-button button-icons" aria-label="Add" type="button" ng-if="row.button" ng-click="addrow(row)"><i class="fa fa-plus-square"></i></md-button>
+					    <md-button class="md-icon-button button-icons" aria-label="Add" type="button" ng-if="row.button" ng-click="addrow(row)" ng-hide="roles=='Siteadmin'"><i class="fa fa-plus-square"></i></md-button>
 					</md-input-container>
 				</td>
 			</tr>

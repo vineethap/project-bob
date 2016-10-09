@@ -1,0 +1,97 @@
+<div class="col-sm-offset-2 col-sm-8">
+<form flex>
+    <div class="md-padding">
+    <h3>Customer List</h3>
+        <md-content layout-padding>
+      
+            <md-input-container flex id="input">
+                <label>Name</label>
+                <input ng-model="form.company_name">
+            </md-input-container>
+            <div layout layout-sm="column">
+                <md-input-container flex >
+                    <label>Contact Name</label>
+                    <input type="text" ng-model="form.username" >
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Contact Number</label>
+                    <input ng-model="form.contact_no"  type="number">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Contact Email</label>
+                    <input ng-model="form.email"type="email" required>
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex id="input">
+                    <label>Address</label>
+                    <input ng-model="form.address_detail">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>State</label>
+                    <md-select ng-model="form.state">
+                        <md-option ng-repeat="dist in districts" value="{{dist}}">
+                            {{dist}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex id="input">
+                 <label >Postal code</label>
+                 <input ng-model="form.postalcode"  type="number">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex id="input" >
+                    <label>ABN</label>
+                    <input ng-model="form.ABN"  type="number">
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Fax number</label>
+                    <input ng-model="form.fax"  type="number">
+                </md-input-container>
+            </div>
+           <div layout layout-sm="column">
+            <md-input-container flex id="input">
+                <label>website</label>
+                <input ng-model="form.website">
+            </md-input-container>
+            <md-input-container flex id="input">
+                <span class="input-label">Logo</span>
+               <!-- <input type="file" id="logo_company" name="file" /> -->
+               <input  type="file" fileread="form.logo" name="file"/>
+            </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex id="input">
+                    <label>Membership amount</label>
+                    <input ng-model="form.member_amount" type="number" >
+                </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Membership bill date</label>
+                     <md-select ng-model="form.member_billdate">
+                        <md-option ng-repeat="date in billDate" value="{{date}}">
+                            {{date}}
+                        </md-option>
+                    </md-select>
+
+                </md-input-container>
+                 <md-input-container flex id="input" ng-if="date=='monthly'">
+                 <md-datepicker ng-model="myDate" md-placeholder="Enter date" ></md-datepicker>
+                 </md-input-container>
+                <md-input-container flex id="input">
+                    <label>Membership balance</label>
+                    <input ng-model="form.member_balance" type="number">
+                </md-input-container>
+            </div>
+          <!--  <md-input-container flex id="input">
+                    <label>Membership balance</label>
+                    <input ng-model="form.role" >
+                </md-input-container> -->
+        </md-content>
+        <md-button class="md-raised md-primary" ng-click="save(form)" ng-hide="title=='edit'" >Save</md-button>
+        <md-button class="md-raised md-primary" ng-click="update(form)" ng-show="title=='edit'" >Edit</md-button>
+		<md-button class="md-raised md-warn" ng-click="cancel()" >Cancel</md-button>	
+    </div>
+</form>
+
+</div>
